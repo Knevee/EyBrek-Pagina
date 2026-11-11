@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EyBrek · Tus ojos también necesitan un descanso</title>
+  <meta name="description" content="EyBrek es una aplicación de escritorio para Windows que bloquea la pantalla de forma periódica y guía ejercicios visuales durante la pausa." />
+  <link rel="icon" href="recursos/logo.png" />
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.2 2" /></symbol>
+    <symbol id="i-ojo" viewBox="0 0 24 24"><path d="M2.5 12s3.6-5.5 9.5-5.5 9.5 5.5 9.5 5.5-3.6 5.5-9.5 5.5S2.5 12 2.5 12Z" /><circle cx="12" cy="12" r="2.8" /></symbol>
+    <symbol id="i-corazon-hoja" viewBox="0 0 24 24"><path d="M12 20.5S3.5 15.5 3.5 9.4A4.9 4.9 0 0 1 12 6.3a4.9 4.9 0 0 1 8.5 3.1c0 6.1-8.5 11.1-8.5 11.1Z" /><path d="M12 20V9.5M12 14l-3-3M12 12l2.6-2.6" /></symbol>
+    <symbol id="i-nube" viewBox="0 0 24 24"><path d="M7 18h10.5a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.6 9.2 4.5 4.5 0 0 0 7 18Z" /></symbol>
+    <symbol id="i-descarga" viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14" /></symbol>
+    <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" /></symbol>
+  </defs>
+</svg>
+
+<!-- ================================================================
+     Portada: mismo panel azul con burbujas del inicio de sesion
+     ================================================================ -->
+<header class="portada">
+  <span class="burbuja burbuja-1" aria-hidden="true"></span>
+  <span class="burbuja burbuja-2" aria-hidden="true"></span>
+  <span class="burbuja burbuja-3" aria-hidden="true"></span>
+
+  <nav class="menu" aria-label="Secciones">
+    <a class="menu-marca" href="#inicio">
+      <svg class="ojo-pestanas ojo-pestanas--menu" viewBox="0 0 64 40" aria-hidden="true">
+        <path d="M32 3v6M18 6l3 5M46 6l-3 5M8 12l4 4M56 12l-4 4" />
+        <path class="ojo-contorno" d="M6 27s10-11 26-11 26 11 26 11-10 11-26 11S6 27 6 27Z" />
+        <circle class="ojo-iris" cx="32" cy="27" r="7" /><circle class="ojo-pupila" cx="32" cy="27" r="2.6" />
+      </svg>
+      Eybrek
+    </a>
+    <div class="menu-enlaces">
+      <a href="#que-es">Qué es</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#integrantes">Integrantes</a>
+      <a class="menu-descarga" href="#descarga">Descargar</a>
+    </div>
+  </nav>
+
+  <div class="portada-contenido" id="inicio">
+    <div class="portada-texto">
+      <svg class="ojo-pestanas" viewBox="0 0 64 40" aria-hidden="true">
+        <path d="M32 3v6M18 6l3 5M46 6l-3 5M8 12l4 4M56 12l-4 4" />
+        <path class="ojo-contorno" d="M6 27s10-11 26-11 26 11 26 11-10 11-26 11S6 27 6 27Z" />
+        <circle class="ojo-iris" cx="32" cy="27" r="7" /><circle class="ojo-pupila" cx="32" cy="27" r="2.6" />
+      </svg>
+      <h1>Eybrek</h1>
+      <p class="lema">Tus ojos también necesitan un descanso <span aria-hidden="true">&#9829;</span></p>
+      <p class="portada-resumen">
+        Una aplicación de escritorio para Windows que convierte la recomendación
+        de descansar la vista en una pausa que de verdad ocurre.
+      </p>
+      <div class="portada-botones">
+        <a class="boton boton-primario" href="#descarga">
+          <svg class="icono"><use href="#i-descarga"></use></svg> Descargar el proyecto
+        </a>
+        <a class="boton boton-claro" href="#que-es">Conocer más</a>
+      </div>
+    </div>
+    <img class="portada-logo" src="recursos/logo.png" alt="Logo de EyBrek: un gato dormido sobre un ojo en pausa" />
+  </div>
+</header>
+
+<main>
+  <!-- ================================================================
+       Que es y para que sirve
+       ================================================================ -->
+  <section class="seccion seccion-crema" id="que-es">
+    <div class="contenedor">
+      <p class="antetitulo">El aplicativo</p>
+      <h2>¿Qué es EyBrek y para qué sirve?</h2>
+      <p class="introduccion">
+        Pasar muchas horas frente al computador mantiene la mirada fija y cansa la vista.
+        Las pausas se olvidan, se posponen o se ignoran. EyBrek resuelve eso:
+        <strong>bloquea la pantalla de forma periódica</strong> durante el tiempo que tú
+        configures y, mientras descansas, <strong>te guía con ejercicios visuales</strong>.
+        No depende de que decidas detenerte: la pausa llega sola.
+      </p>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <span class="circulo tono-lavanda"><svg class="icono"><use href="#i-reloj"></use></svg></span>
+          <h3>Pausas obligatorias</h3>
+          <p>Eliges cada cuánto descansar, cuánto dura la pausa y en qué horario. Un minuto antes recibes un aviso.</p>
+        </article>
+        <article class="tarjeta">
+          <span class="circulo tono-amarillo"><svg class="icono"><use href="#i-ojo"></use></svg></span>
+          <h3>Ejercicios guiados</h3>
+          <p>Doce ejercicios para los ojos, cada uno en cuatro pasos con su tiempo. En cada pausa aparece uno distinto.</p>
+        </article>
+        <article class="tarjeta">
+          <span class="circulo tono-verde"><svg class="icono"><use href="#i-corazon-hoja"></use></svg></span>
+          <h3>Consejos para tu vista</h3>
+          <p>Recordatorios sencillos durante el descanso: mirar lejos, parpadear, estirarte y cuidarte.</p>
+        </article>
+        <article class="tarjeta">
+          <span class="circulo tono-rosa"><svg class="icono"><use href="#i-nube"></use></svg></span>
+          <h3>Tu cuenta, en cualquier equipo</h3>
+          <p>La configuración se guarda en la nube y también en tu equipo, así que sigue funcionando sin Internet.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       Como funciona: el degradado de la pantalla de bloqueo
+       ================================================================ -->
+  <section class="seccion seccion-pausa" id="como-funciona">
+    <div class="contenedor">
+      <p class="antetitulo antetitulo-claro">La pausa</p>
+      <h2>¿Cómo funciona?</h2>
+
+      <ol class="pasos">
+        <li><span class="paso-numero tono-lavanda">1</span><h3>Configuras</h3><p>Intervalo, duración, horario y avisos.</p></li>
+        <li><span class="paso-numero tono-amarillo">2</span><h3>Te avisa</h3><p>Un minuto antes del descanso.</p></li>
+        <li><span class="paso-numero tono-durazno">3</span><h3>Bloquea</h3><p>Cubre toda la pantalla, sin opción de omitir.</p></li>
+        <li><span class="paso-numero tono-rosa">4</span><h3>Te guía</h3><p>Un ejercicio en cuatro pasos y luego descansas.</p></li>
+      </ol>
+
+      <div class="capturas">
+        <figure>
+          <img src="recursos/pantalla-descanso.png" alt="Pantalla de descanso de EyBrek con la hora, la hora de fin y consejos" loading="lazy" />
+          <figcaption>Primero, 40 segundos de descanso con la hora y consejos.</figcaption>
+        </figure>
+        <figure>
+          <img src="recursos/pantalla-ejercicio.png" alt="Pantalla del ejercicio de EyBrek con cuatro pasos y temporizador" loading="lazy" />
+          <figcaption>Después, un ejercicio en cuatro pasos con su temporizador.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       Configuracion: el verde salvia de la pantalla de configuracion
+       ================================================================ -->
+  <section class="seccion seccion-salvia">
+    <div class="contenedor dos-columnas">
+      <div>
+        <p class="antetitulo">Tú decides</p>
+        <h2>Una configuración simple</h2>
+        <ul class="lista">
+          <li>Bloquear cada 15 o 30 minutos, o cada 1, 2, 4 u 8 horas.</li>
+          <li>Pausas de 5 a 30 minutos.</li>
+          <li>Horario de trabajo, por ejemplo de 8:00 a. m. a 9:00 p. m.</li>
+          <li>Avisos y consejos que puedes activar o apagar.</li>
+        </ul>
+      </div>
+      <img class="captura-config" src="recursos/pantalla-configuracion.png" alt="Pantalla de configuración de EyBrek" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- ================================================================
+       Integrantes
+       ================================================================ -->
+  <section class="seccion seccion-crema" id="integrantes">
+    <div class="contenedor">
+      <p class="antetitulo">Equipo</p>
+      <h2>Integrantes</h2>
+      <p class="introduccion introduccion-centro">
+        Proyecto de aula de <strong>Diseño de Software I</strong> · Grupo 3 · Periodo 2026B<br />
+        Ingeniería de Software · Universidad de Santander (UDES)
+      </p>
+
+      <div class="integrantes">
+        <article class="integrante">
+          <span class="avatar">JH</span>
+          <h3>Josué Herrera Quintero</h3>
+          <p>Estudiante de Ingeniería de Software</p>
+        </article>
+        <article class="integrante">
+          <span class="avatar avatar-lavanda">MH</span>
+          <h3>María José Herrera Bonilla</h3>
+          <p>Estudiante de Ingeniería de Software</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       Descarga
+       ================================================================ -->
+  <section class="seccion seccion-descarga" id="descarga">
+    <div class="contenedor">
+      <div class="tarjeta-descarga">
+        <img class="gato-descarga" src="recursos/gato-gafas.png" alt="" />
+        <div>
+          <p class="antetitulo">Proyecto completo</p>
+          <h2>Descarga EyBrek</h2>
+          <p>El archivo incluye todo el proyecto:</p>
+          <ul class="lista lista-compacta">
+            <li>Código fuente del cliente de escritorio y del servidor.</li>
+            <li>Instalador para Windows (<code>EyBrek-Instalador-1.0.0.exe</code>).</li>
+            <li>Manual de usuario y manual técnico.</li>
+            <li>Presentación final y documentos de diseño.</li>
+          </ul>
+          <a class="boton boton-primario boton-grande" href="https://github.com/Knevee/EyBrek-Pagina/releases/latest/download/EYBREK.zip" download="EYBREK.zip">
+            <svg class="icono"><use href="#i-descarga"></use></svg> Descargar EYBREK.zip
+          </a>
+          <p class="nota">Archivo .zip · 468 MB · Windows 10 u 11 para ejecutar la aplicación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <img src="recursos/gato-mimido.png" alt="" />
+  <p>EyBrek · Descansa hoy, para ver un mejor mañana</p>
+  <p class="pie-detalle">Josué Herrera Quintero · María José Herrera Bonilla · UDES · 2026B</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+/* =====================================================================
+   EyBrek - Pagina del proyecto
+   Usa la misma paleta, tipografia y formas de la aplicacion:
+   el azul con burbujas del inicio de sesion, el crema de las tarjetas,
+   el degradado morado de la pausa y el verde salvia de la configuracion.
+   ===================================================================== */
+
+@font-face {
+  font-family: 'Patrick Hand';
+  src: url('recursos/patrick-hand.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --azul: #dde5f8;
+  --burbuja: #c9d6f3;
+  --crema: #f7efe3;
+  --crema-claro: #faf5ec;
+  --tarjeta: #fdf9f2;
+  --borde: #ecdfcb;
+  --tinta: #2f3445;
+  --texto-suave: #5d5d68;
+  --iris: #8ea3dc;
+  --enlace: #4b5fb0;
+
+  --verde: #2f4a40;
+  --verde-claro: #3d5f52;
+  --salvia: #b9ccb0;
+  --salvia-claro: #dbe6d4;
+
+  --cielo: #6c7cab;
+  --cielo-medio: #8a88ad;
+  --malva: #a08b95;
+
+  --lavanda: #dcd8f4;
+  --amarillo: #f6e3a8;
+  --durazno: #f6d3bd;
+  --rosa: #f7d5dc;
+  --verde-pastel: #cfe3c4;
+
+  --sombra: 0 10px 30px rgba(74, 68, 48, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Patrick Hand', 'Comic Sans MS', 'Segoe UI', sans-serif;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--tinta);
+  background: var(--crema);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1.1; }
+img { max-width: 100%; display: block; }
+code { font-family: inherit; background: var(--crema); padding: 0 6px; border-radius: 6px; }
+
+.icono {
+  width: 1.25em;
+  height: 1.25em;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contenedor {
+  width: min(1100px, 100% - 40px);
+  margin: 0 auto;
+}
+
+/* ---- Botones --------------------------------------------------------- */
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 20px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.boton:active { transform: translateY(1px); }
+
+.boton-primario {
+  background: var(--verde);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(47, 74, 64, 0.25);
+}
+
+.boton-primario:hover { background: var(--verde-claro); }
+
+.boton-claro {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--verde);
+  border-color: var(--salvia);
+}
+
+.boton-claro:hover { background: #fff; }
+
+.boton-grande { padding: 15px 34px; font-size: 22px; margin-top: 8px; }
+
+/* ---- Ojo con pestanas (el del inicio de sesion) ---------------------- */
+
+.ojo-pestanas {
+  width: 72px;
+  height: 45px;
+  fill: none;
+  stroke: var(--tinta);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ojo-pestanas .ojo-contorno { fill: #eef1fb; }
+.ojo-pestanas .ojo-iris { fill: var(--iris); stroke-width: 1.6; }
+.ojo-pestanas .ojo-pupila { fill: var(--tinta); stroke: none; }
+
+.ojo-pestanas--menu { width: 40px; height: 25px; }
+
+/* ---- Portada ----------------------------------------------------------- */
+
+.portada {
+  position: relative;
+  overflow: hidden;
+  background: var(--azul);
+  padding-bottom: 90px;
+}
+
+/* Curva crema inferior, como en la pantalla de acceso. */
+.portada::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  bottom: -160px;
+  height: 230px;
+  border-radius: 50%;
+  background: var(--crema);
+}
+
+.burbuja {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--burbuja);
+  pointer-events: none;
+}
+
+.burbuja-1 { width: 320px; height: 320px; top: -150px; left: -120px; }
+.burbuja-2 { width: 200px; height: 200px; top: 22%; right: -70px; }
+.burbuja-3 { width: 120px; height: 120px; bottom: 120px; left: 42%; opacity: 0.6; }
+
+.menu {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 100% - 40px);
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.menu a { color: var(--tinta); text-decoration: none; }
+
+.menu-marca { display: inline-flex; align-items: center; gap: 10px; font-size: 30px; }
+
+.menu-enlaces { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; font-size: 19px; }
+
+.menu-enlaces a:hover { color: var(--enlace); }
+
+.menu-descarga {
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: var(--verde);
+  color: #fff !important;
+}
+
+.portada-contenido {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 100% - 40px);
+  margin: 0 auto;
+  padding: 30px 0 20px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.portada h1 { font-size: clamp(64px, 9vw, 104px); margin-top: 4px; }
+
+.lema { margin: 8px 0 0; font-size: clamp(22px, 2.6vw, 28px); }
+
+.portada-resumen { margin: 18px 0 0; max-width: 520px; font-size: 21px; color: var(--texto-suave); }
+
+.portada-botones { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+.portada-logo {
+  justify-self: center;
+  width: min(380px, 100%);
+  filter: drop-shadow(0 16px 24px rgba(47, 52, 69, 0.15));
+}
+
+/* ---- Secciones ------------------------------------------------------- */
+
+.seccion { padding: 80px 0; }
+
+.seccion h2 { font-size: clamp(36px, 4.5vw, 50px); }
+
+.antetitulo {
+  margin: 0 0 6px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--enlace);
+}
+
+.antetitulo-claro { color: #fff; opacity: 0.85; }
+
+.introduccion { margin: 18px 0 0; max-width: 760px; font-size: 21px; color: var(--texto-suave); }
+
+.introduccion-centro { margin-left: auto; margin-right: auto; text-align: center; }
+
+.seccion-crema { background: var(--crema); }
+
+#integrantes .antetitulo,
+#integrantes h2 { text-align: center; }
+
+/* Tarjetas de caracteristicas, como las del panel de configuracion. */
+.tarjetas {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tarjeta {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 22px;
+  padding: 24px 22px;
+  box-shadow: var(--sombra);
+}
+
+.tarjeta h3 { margin-top: 14px; font-size: 25px; }
+
+.tarjeta p { margin: 8px 0 0; font-size: 18px; color: var(--texto-suave); }
+
+.circulo {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+
+.tono-lavanda { background: var(--lavanda); }
+.tono-amarillo { background: var(--amarillo); }
+.tono-durazno { background: var(--durazno); }
+.tono-rosa { background: var(--rosa); }
+.tono-verde { background: var(--verde-pastel); }
+
+/* Degradado con franjas de luz de la pantalla de bloqueo. */
+.seccion-pausa {
+  color: #fff;
+  background:
+    repeating-linear-gradient(115deg,
+      rgba(255, 255, 255, 0) 0 9vw,
+      rgba(255, 255, 255, 0.07) 9vw 13vw,
+      rgba(255, 255, 255, 0) 13vw 22vw),
+    linear-gradient(160deg, var(--cielo) 0%, var(--cielo-medio) 50%, var(--malva) 100%);
+}
+
+.pasos {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pasos li {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.paso-numero {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  color: var(--tinta);
+}
+
+.pasos h3 { margin-top: 12px; font-size: 26px; }
+
+.pasos p { margin: 6px 0 0; font-size: 18px; opacity: 0.92; }
+
+.capturas {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.capturas figure { margin: 0; }
+
+.capturas img {
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(30, 25, 60, 0.30);
+}
+
+.capturas figcaption { margin-top: 12px; font-size: 18px; text-align: center; }
+
+/* Verde salvia de la pantalla de configuracion. */
+.seccion-salvia { background: var(--salvia-claro); }
+
+.dos-columnas {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.lista { margin: 20px 0 0; padding-left: 22px; font-size: 20px; }
+
+.lista li { margin-bottom: 8px; }
+
+.lista-compacta { font-size: 18px; margin-top: 8px; }
+
+.lista-compacta li { margin-bottom: 4px; }
+
+.captura-config { border-radius: 16px; box-shadow: var(--sombra); }
+
+/* ---- Integrantes ------------------------------------------------------ */
+
+.integrantes {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: center;
+  gap: 24px;
+}
+
+.integrante {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 22px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  color: #fff;
+  background: var(--verde);
+}
+
+.avatar-lavanda { background: var(--cielo); }
+
+.integrante h3 { margin-top: 16px; font-size: 26px; }
+
+.integrante p { margin: 6px 0 0; color: var(--texto-suave); }
+
+/* ---- Descarga ------------------------------------------------------------ */
+
+.seccion-descarga {
+  background: var(--azul);
+  position: relative;
+  overflow: hidden;
+}
+
+.tarjeta-descarga {
+  position: relative;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 28px;
+  padding: 40px 44px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 36px;
+  align-items: center;
+  box-shadow: 0 18px 44px rgba(47, 52, 69, 0.14);
+}
+
+.tarjeta-descarga p { margin: 10px 0 0; }
+
+.gato-descarga { width: 220px; }
+
+.nota { font-size: 16px; color: var(--texto-suave); }
+
+/* ---- Pie --------------------------------------------------------------- */
+
+.pie {
+  background: var(--verde);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px 30px;
+}
+
+.pie img { width: 110px; margin: 0 auto 8px; }
+
+.pie p { margin: 0; font-size: 20px; }
+
+.pie-detalle { margin-top: 6px !important; font-size: 16px !important; opacity: 0.8; }
+
+/* ---- Pantallas pequenas ---------------------------------------------- */
+
+@media (max-width: 900px) {
+  .portada-contenido,
+  .dos-columnas,
+  .tarjeta-descarga { grid-template-columns: 1fr; }
+
+  .portada-logo { width: min(280px, 80%); }
+
+  .tarjetas,
+  .pasos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .capturas { grid-template-columns: 1fr; }
+
+  .gato-descarga { width: 160px; margin: 0 auto; }
+
+  .tarjeta-descarga { padding: 30px 24px; text-align: center; }
+
+  .tarjeta-descarga .lista { text-align: left; }
+}
+
+@media (max-width: 560px) {
+  .tarjetas,
+  .pasos,
+  .integrantes { grid-template-columns: 1fr; }
+
+  .menu-enlaces { gap: 14px; font-size: 17px; }
+
+  .seccion { padding: 60px 0; }
+}
